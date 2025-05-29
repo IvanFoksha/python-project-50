@@ -1,10 +1,10 @@
 [project]
-author = [
+authors = [
     {name = "Ivan Foksha", email = "v.foksh6@gmail.com"}
 ]
 name = "hexlet-code"
 version = "0.1.0"
-description = "A tool to computer differences between files"
+description = "A tool to compute differences between files"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = []
@@ -22,3 +22,6 @@ build-backend = "hatchling.build"
 
 [project.scripts]
 gendiff = "hexlet_code.scripts.gendiff:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["hexlet_code"]
