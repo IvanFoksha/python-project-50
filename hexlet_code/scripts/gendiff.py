@@ -5,11 +5,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="Compares two configuration files and shows a difference."
     )
-    parser.add_argument('first_file', help=argparse.SUPPRESS)
-    parser.add_argument('second_file', help=argparse.SUPPRESS)
-    parser.add_argument(
-        "-h", "--help", action="help", help="show this help message and exit"
-    )
+    parser.add_argument('first_file', help='Path to the first configuration file')
+    parser.add_argument('second_file', help='Path to the second configuration file')
     args = parser.parse_args()
     print('Gendiff is ready to rock! Use -h for help')
 
