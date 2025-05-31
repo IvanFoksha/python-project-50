@@ -4,6 +4,7 @@ from pathlib import Path
 
 
 def read_file(file_path):
+
     file_ext = Path(file_path).suffix.lower()
 
     if file_ext == '.json':
