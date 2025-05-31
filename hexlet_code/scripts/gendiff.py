@@ -15,7 +15,7 @@ def read_file(file_path):
 
 
 def generate_diff(data1, data2):
-    keys = sorted(set(data1.keys())) | set(data2.keys())
+    keys = sorted(set(data1.keys()) | set(data2.keys()))
     lines = []
 
     for key in keys:
