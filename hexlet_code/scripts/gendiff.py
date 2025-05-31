@@ -26,7 +26,7 @@ def generate_diff(data1, data2):
             lines.append(f'- {key}: {val1}')
         elif key in data2 and key not in data1:
             lines.append(f'+ {key}: {val2}')
-        elif val2 != val2:
+        elif val1 != val2:
             lines.append(f'- {key}: {val1}')
             lines.append(f'+ {key}: {val2}')
         else:
