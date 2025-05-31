@@ -17,8 +17,8 @@ gendiff tests/fixtures/file1.json tests/fixtures/file2.json
 #   + timeout: 20
 #   + verbose: True
 # }
+```
 
 Полная демонстрация в терминале:
 
 [![asciicast](https://asciinema.org/a/LEhB5qnHrrsjQmYQ0qIM8E2p4.svg)](https://asciinema.org/a/LEhB5qnHrrsjQmYQ0qIM8E2p4)
-```
