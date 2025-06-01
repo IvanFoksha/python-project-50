@@ -2,11 +2,11 @@
 
 [![Actions Status](https://github.com/IvanFoksha/python-project-50/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/IvanFoksha/python-project-50/actions)
 
-[![Build](https://github.com/your_username/your_repo/actions/workflows/python.yml/badge.svg)](https://github.com/your_username/your_repo/actions/workflows/python.yml)
+[![Build](https://github.com/IvanFoksha/python-project-50/actions/workflows/python.yml/badge.svg)](https://github.com/your_username/your_repo/actions/workflows/python.yml)
 
-[![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=your_project_key&metric=alert_status)](https://sonarcloud.io/dashboard?id=your_project_key)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=IvanFoksha_python-project-50&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=IvanFoksha_python-project-50)
 
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=your_project_key&metric=coverage)](https://sonarcloud.io/dashboard?id=your_project_key)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=IvanFoksha_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=IvanFoksha_python-project-50)
 
 ### Пример использования
 
