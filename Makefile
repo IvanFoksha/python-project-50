@@ -4,7 +4,7 @@ install:
 check: lint test
 
 lint:
-	uv run ruff .
+	uv run python -m ruff check .
 
 test:
 	uv run pytest
