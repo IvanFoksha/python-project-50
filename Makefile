@@ -1,13 +1,14 @@
 install:
-    uv sync
+	uv sync
 
-check: lint test
+check:
+	lint test
 
 lint:
-    uv run ruff .
+	uv run ruff .
 
 test:
-    uv run pytest
+	uv run pytest
 
 test-coverage:
-    uv run pytest --cov=hexlet_code --cov-report=xml
+	uv run pytest --cov=hexlet_code --cov-report=xml
