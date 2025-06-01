@@ -11,9 +11,10 @@ def read_file(file_name):
 
 
 def test_gendiff_json():
-    result = generate_diff(
-        FIXTURES_PATH / 'file1.json',
-        FIXTURES_PATH / 'file2.json'
-    )
-    expected = read_file('expected_result.txt').strip()
+    data1 = read_file(FIXTURES_PATH / 'file1.json')
+    data2 = read_file(FIXTURES_PATH / 'file2.json')
+
+    result = generate_diff(data1, data2)
+
+    expected = read_file(FIXTURES_PATH / 'expected_result.txt').strip()
     assert result.strip() == expected
