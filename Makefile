@@ -1,8 +1,7 @@
 install:
 	uv sync
 
-check:
-	lint test
+check: lint test
 
 lint:
 	uv run ruff .
