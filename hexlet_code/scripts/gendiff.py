@@ -2,7 +2,6 @@ import argparse
 import json
 from pathlib import Path
 
-
 from ..parser import parse_file
 
 

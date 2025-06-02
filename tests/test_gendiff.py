@@ -1,4 +1,3 @@
-import json
 from pathlib import Path
 
 from hexlet_code import generate_diff
