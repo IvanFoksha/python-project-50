@@ -10,7 +10,7 @@
 
 ### Пример использования
 
-Сравниваем два конфигурационных файла:
+##### Сравниваем два конфигурационных файла в формате json:
 
 ```bash
 gendiff tests/fixtures/file1.json tests/fixtures/file2.json
@@ -28,3 +28,22 @@ gendiff tests/fixtures/file1.json tests/fixtures/file2.json
 Полная демонстрация в терминале:
 
 [![asciicast](https://asciinema.org/a/LEhB5qnHrrsjQmYQ0qIM8E2p4.svg)](https://asciinema.org/a/LEhB5qnHrrsjQmYQ0qIM8E2p4)
+
+##### Сравниваем два конфигурационных файла в формате yml и yaml:
+
+```bash
+gendiff tests/fixtures/file1.yml tests/fixtures/file2.yaml
+# Вывод:
+# {
+#   - follow: false
+#     host: hexlet.io
+#   - proxy: 123.234.53.22
+#   - timeout: 50
+#   + timeout: 20
+#   + verbose: true
+# }
+```
+
+Полная демострация в терминале:
+
+[![asciicast](https://asciinema.org/a/tXqvjbQbSmj2uEdttTR4Lbhpb.svg)](https://asciinema.org/a/tXqvjbQbSmj2uEdttTR4Lbhpb)
