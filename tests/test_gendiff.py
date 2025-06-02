@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from hexlet_code import generate_diff
+from hexlet_code.parser import parse_file
 
 FIXTURES_PATH = Path(__file__).parent / 'test_data'
 
@@ -11,14 +12,19 @@ def read_file(file_path):
         return f.read()
 
 
-def read_json(path):
-    with open(path, 'r') as f:
-        return json.load(f)
-
-
 def test_gendiff_json():
-    data1 = read_json(FIXTURES_PATH / 'file1.json')
-    data2 = read_json(FIXTURES_PATH / 'file2.json')
+    data1 = parse_file(FIXTURES_PATH / 'file1.json')
+    data2 = parse_file(FIXTURES_PATH / 'file2.json')
+
+    result = generate_diff(data1, data2)
+    expected = read_file(FIXTURES_PATH / 'expected_result.txt').strip()
+
+    assert result.strip() == expected
+
+
+def test_gendiff_yaml():
+    data1 = parse_file(FIXTURES_PATH / 'file1.yml')
+    data2 = parse_file(FIXTURES_PATH / 'file2.yaml')
 
     result = generate_diff(data1, data2)
     expected = read_file(FIXTURES_PATH / 'expected_result.txt').strip()
