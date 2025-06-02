@@ -3,6 +3,9 @@ import json
 from pathlib import Path
 
 
+from ..parser import parse_file
+
+
 def read_file(file_path):
 
     file_ext = Path(file_path).suffix.lower()
@@ -57,8 +60,8 @@ def main():
 
     args = parser.parse_args()
 
-    data1 = read_file(args.first_file)
-    data2 = read_file(args.second_file)
+    data1 = parse_file(args.first_file)
+    data2 = parse_file(args.second_file)
 
     print(generate_diff(data1, data2))
 
