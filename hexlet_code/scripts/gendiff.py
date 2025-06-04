@@ -2,7 +2,6 @@ import argparse
 
 from ..__init__ import generate_diff
 
-
 # def read_file(file_path):
 
 #     file_ext = Path(file_path).suffix.lower()
