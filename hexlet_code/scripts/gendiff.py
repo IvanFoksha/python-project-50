@@ -2,8 +2,6 @@ import argparse
 
 from ..__init__ import generate_diff
 
-from ..parser import parse_file
-
 
 # def read_file(file_path):
 
@@ -59,8 +57,8 @@ def main():
 
     args = parser.parse_args()
 
-    print(generate_diff(parse_file(args.first_file),
-                        parse_file(args.second_file),
+    print(generate_diff(args.first_file,
+                        args.second_file,
                         format_name=args.format))
 
 

@@ -13,3 +13,12 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
         return format_output(diff_tree)
     else:
         raise ValueError(f'Unsupported format: {format_name}')
+
+
+def generate_diff_from_data(data1, data2, format_name='stylish'):
+    diff_tree = build_diff_tree(data1, data2)
+
+    if format_name == 'stylish':
+        return format_output(diff_tree)
+    else:
+        raise ValueError(f'Unsupported format: {format_name}')
