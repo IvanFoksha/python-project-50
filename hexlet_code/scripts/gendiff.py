@@ -1,49 +1,49 @@
 import argparse
-import json
-from pathlib import Path
+
+from ..__init__ import generate_diff
 
 from ..parser import parse_file
 
 
-def read_file(file_path):
+# def read_file(file_path):
 
-    file_ext = Path(file_path).suffix.lower()
+#     file_ext = Path(file_path).suffix.lower()
 
-    if file_ext == '.json':
-        with open(file_path, 'r') as f:
-            return json.load(f)
-    else:
-        raise ValueError(f'Unsupported file format: {file_ext}')
-
-
-def format_value(value):
-    if isinstance(value, bool):
-        return 'true' if value else 'false'
-    elif value is None:
-        return 'null'
-    else:
-        return str(value)
+#     if file_ext == '.json':
+#         with open(file_path, 'r') as f:
+#             return json.load(f)
+#     else:
+#         raise ValueError(f'Unsupported file format: {file_ext}')
 
 
-def generate_diff(data1, data2):
-    keys = sorted(set(data1.keys()) | set(data2.keys()))
-    lines = []
+# def format_value(value):
+#     if isinstance(value, bool):
+#         return 'true' if value else 'false'
+#     elif value is None:
+#         return 'null'
+#     else:
+#         return str(value)
 
-    for key in keys:
-        val1 = data1.get(key)
-        val2 = data2.get(key)
 
-        if key in data1 and key not in data2:
-            lines.append(f'- {key}: {format_value(val1)}')
-        elif key in data2 and key not in data1:
-            lines.append(f'+ {key}: {format_value(val2)}')
-        elif val1 != val2:
-            lines.append(f'- {key}: {format_value(val1)}')
-            lines.append(f'+ {key}: {format_value(val2)}')
-        else:
-            lines.append(f'  {key}: {format_value(val1)}')
+# def generate_diff(data1, data2):
+#     keys = sorted(set(data1.keys()) | set(data2.keys()))
+#     lines = []
 
-    return '{\n' + '\n'.join(f'  {line}' for line in lines) + '\n}'
+#     for key in keys:
+#         val1 = data1.get(key)
+#         val2 = data2.get(key)
+
+#         if key in data1 and key not in data2:
+#             lines.append(f'- {key}: {format_value(val1)}')
+#         elif key in data2 and key not in data1:
+#             lines.append(f'+ {key}: {format_value(val2)}')
+#         elif val1 != val2:
+#             lines.append(f'- {key}: {format_value(val1)}')
+#             lines.append(f'+ {key}: {format_value(val2)}')
+#         else:
+#             lines.append(f'  {key}: {format_value(val1)}')
+
+#     return '{\n' + '\n'.join(f'  {line}' for line in lines) + '\n}'
 
 
 def main():
@@ -59,10 +59,9 @@ def main():
 
     args = parser.parse_args()
 
-    data1 = parse_file(args.first_file)
-    data2 = parse_file(args.second_file)
-
-    print(generate_diff(data1, data2))
+    print(generate_diff(parse_file(args.first_file),
+                        parse_file(args.second_file),
+                        format_name=args.format))
 
 
 if __name__ == '__main__':
