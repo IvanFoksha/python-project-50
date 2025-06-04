@@ -47,3 +47,56 @@ gendiff tests/fixtures/file1.yml tests/fixtures/file2.yaml
 Полная демострация в терминале:
 
 [![asciicast](https://asciinema.org/a/tXqvjbQbSmj2uEdttTR4Lbhpb.svg)](https://asciinema.org/a/tXqvjbQbSmj2uEdttTR4Lbhpb)
+
+##### Сравниваем два конфигурационных файла с помощью рекурсивного сравнения
+
+```bash
+uv run gendiff tests/test_data/file1.json tests/test_data/file2.json
+# Вывод:
+# {
+#   common: {
+#     + follow: false
+#       setting1: Value 1
+#     - setting2: 200
+#     - setting3: true
+#     + setting3: null
+#     + setting4: blah blah
+#     + setting5: {
+#           key5: value5
+#       }
+#       setting6: {
+#         - wow:
+#         + wow: so much
+#           key: value
+#         + ops: vops
+#       }
+#   }
+#   group1: {
+#     - baz: bas
+#     + baz: bars
+#       foo: bar
+#     - nest: {
+#           key: value
+#       }
+#     + nest: str
+#   }
+# - group2: {
+#       abc: 12345
+#       deep: {
+#           id: 45
+#       }
+#   }
+# + group3: {
+#       deep: {
+#           id: {
+#               number: 45
+#           }
+#       }
+#       fee: 100500
+#   }
+# }
+```
+
+Полная демонстрация в терминале:
+
+[![asciicast](https://asciinema.org/a/b3dVFWyOo6SMffXrjAPc61B7T.svg)](https://asciinema.org/a/b3dVFWyOo6SMffXrjAPc61B7T)
