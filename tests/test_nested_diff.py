@@ -25,5 +25,6 @@ def test_gendiff_json_nested():
 #     data2 = parse_file(FIXTURES_PATH / 'file2.yaml')
 
 #     result = generate_diff_from_data(data1, data2)
-#     expected = read_file(FIXTURES_PATH / 'expected_result_stylish.txt').strip()
+#     expected = read_file(FIXTURES_PATH /
+# 'expected_result_stylish.txt').strip()
 #     assert result.strip() == expected
