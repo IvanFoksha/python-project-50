@@ -39,6 +39,6 @@ def format_value(value):
         return str(value)
 
 
-def format_output(diff_tree):
+def format_stylish(diff_tree):
     lines = [format_node(node, 0) for node in diff_tree]
     return '{\n' + '\n'.join(lines) + '\n}'
