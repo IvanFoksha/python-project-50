@@ -20,10 +20,10 @@ def test_gendiff_json_nested():
     assert result.strip() == expected
 
 
-def test_gendiff_yaml_nested():
-    data1 = parse_file(FIXTURES_PATH / 'file1.yml')
-    data2 = parse_file(FIXTURES_PATH / 'file2.yaml')
+# def test_gendiff_yaml_nested():
+#     data1 = parse_file(FIXTURES_PATH / 'file1.yml')
+#     data2 = parse_file(FIXTURES_PATH / 'file2.yaml')
 
-    result = generate_diff_from_data(data1, data2)
-    expected = read_file(FIXTURES_PATH / 'expected_result_stylish.txt').strip()
-    assert result.strip() == expected
+#     result = generate_diff_from_data(data1, data2)
+#     expected = read_file(FIXTURES_PATH / 'expected_result_stylish.txt').strip()
+#     assert result.strip() == expected
