@@ -1,29 +1,30 @@
-def format_node(node, depth=0):
-    indent = ' ' * depth
-
-    node_type = node['type']
-    key = node.get('key')
+def format_stylish(diff_tree, depth=0):
+    indent = '  ' * depth
 
     lines = []
 
-    if node_type == 'nested':
-        children_lines = '\n'.join(
-            format_node(child, depth + 1) for child in node['children']
-        )
-        lines.append(f'{indent} {key}: {{\n{children_lines}\n{indent}  }}')
-    elif node_type == 'changed':
-        old_line = f"{indent}- {key}: {format_value(node['old_value'])}"
-        new_line = f"{indent}+ {key}: {format_value(node['new_value'])}"
-        lines.extend([old_line, new_line])
-    elif node_type == 'added':
-        line = f"{indent}+ {key}: {format_value(node['value'])}"
-        lines.append(line)
-    elif node_type == 'removed':
-        line = f"{indent}- {key}: {format_value(node['value'])}"
-        lines.append(line)
-    elif node_type == 'unchanged':
-        line = f"{indent}  {key}: {format_value(node['value'])}"
-        lines.append(line)
+    for node in diff_tree:
+        key = node['key']
+        node_type = node['type']
+
+        if node_type == 'nested':
+            children_lines = format_stylish(node['children'], depth + 1)
+            lines.append(f"{indent}  {key}: {{")
+            lines.append(children_lines)
+            lines.append(f"{indent}  }}")
+
+        elif node_type == 'changed':
+            lines.append(f"{indent}- {key}: {format_value(node['old_value'])}")
+            lines.append(f"{indent}+ {key}: {format_value(node['new_value'])}")
+
+        elif node_type == 'added':
+            lines.append(f"{indent}+ {key}: {format_value(node['value'])}")
+
+        elif node_type == 'removed':
+            lines.append(f"{indent}- {key}: {format_value(node['value'])}")
+
+        elif node_type == 'unchanged':
+            lines.append(f"{indent}  {key}: {format_value(node['value'])}")
 
     return '\n'.join(lines)
 
@@ -37,8 +38,3 @@ def format_value(value):
         return 'null'
     else:
         return str(value)
-
-
-def format_stylish(diff_tree):
-    lines = [format_node(node, 0) for node in diff_tree]
-    return '{\n' + '\n'.join(lines) + '\n}'

@@ -44,4 +44,5 @@ def build_diff_tree(data1, data2):
                 'key': key,
                 'value': val1
             })
+
     return diff
