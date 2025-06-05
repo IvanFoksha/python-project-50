@@ -12,8 +12,8 @@ def read_file(file_path):
 
 
 def test_gendiff_json():
-    data1 = parse_file(FIXTURES_PATH / 'file1.json')
-    data2 = parse_file(FIXTURES_PATH / 'file2.json')
+    data1 = parse_file(FIXTURES_PATH / 'file3.json')
+    data2 = parse_file(FIXTURES_PATH / 'file4.json')
 
     result = generate_diff_from_data(data1, data2)
     expected = read_file(FIXTURES_PATH / 'expected_result.txt').strip()
