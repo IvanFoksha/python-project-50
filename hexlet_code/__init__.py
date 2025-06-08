@@ -10,7 +10,7 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
     diff_tree = build_diff_tree(data1, data2)
 
     if format_name == 'stylish':
-        inner = format_stylish(diff_tree)
+        inner = format_stylish(diff_tree, depth=1)
         return '{\n' + inner + '\n}'
     else:
         raise ValueError(f'Unsupported format: {format_name}')
@@ -20,7 +20,7 @@ def generate_diff_from_data(data1, data2, format_name='stylish'):
     diff_tree = build_diff_tree(data1, data2)
 
     if format_name == 'stylish':
-        inner = format_stylish(diff_tree, depth=1)
+        inner = format_stylish(diff_tree, 1)
         return '{\n' + inner + '\n}'
     else:
         raise ValueError(f'Unsupported format: {format_name}')
