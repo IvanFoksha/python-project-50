@@ -1,6 +1,6 @@
 from .diff_builder import build_diff_tree
-from .formatters.stylish import format_stylish
 from .formatters.plain import format_plain
+from .formatters.stylish import format_stylish
 from .parser import parse_file
 
 
