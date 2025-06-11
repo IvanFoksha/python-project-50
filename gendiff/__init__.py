@@ -13,6 +13,8 @@ def generate_diff(file_path1, file_path2, format_name='stylish'):
     if format_name == 'stylish':
         inner = format_stylish(diff_tree, depth=1)
         return '{\n' + inner + '\n}'
+    if format_name == 'plain':
+        return format_plain(diff_tree)
     else:
         raise ValueError(f'Unsupported format: {format_name}')
 
