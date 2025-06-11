@@ -18,12 +18,12 @@ def format_plain(diff_tree):
             old_val = format_value(node["old_value"])
             new_val = format_value(node["new_value"])
             lines.append(f"Property '{current_path}' was updated."
-                         f"From {old_val} to {new_val}")
+                         f" From {old_val} to {new_val}")
 
         elif node_type == 'added':
             value = format_value(node["value"])
             lines.append(f"Property '{current_path}'"
-                         f"was added with value: {value}")
+                         f" was added with value: {value}")
 
         elif node_type == 'removed':
             value = format_value(node["value"])
