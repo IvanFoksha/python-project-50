@@ -26,3 +26,7 @@ gendiff = "gendiff.scripts.gendiff:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["gendiff"]
+
+[tool.ruff]
+select = ["E", "F", "I001", "C90"]
+ignore = ["C901"]
