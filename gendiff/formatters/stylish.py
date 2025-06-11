@@ -26,12 +26,15 @@ def format_stylish(diff_tree, depth=0):
         elif node_type == 'changed':
             old_val = format_value(node['old_value'], depth + 1)
             new_val = format_value(node['new_value'], depth + 1)
-            if old_val == '':
+            if old_val and new_val == '':
+                lines.append(f"{removed_indent}{key}:{old_val}")
+                lines.append(f"{removed_indent}{key}:{new_val}")
+            elif old_val == '':
                 lines.append(f"{removed_indent}{key}:{old_val}")
                 lines.append(f"{added_indent}{key}: {new_val}")
             elif new_val == '':
-                lines.append(f"{removed_indent}{key}:{new_val}")
                 lines.append(f"{added_indent}{key}: {old_val}")
+                lines.append(f"{removed_indent}{key}:{new_val}")
             else:
                 lines.append(f"{removed_indent}{key}: {old_val}")
                 lines.append(f"{added_indent}{key}: {new_val}")
