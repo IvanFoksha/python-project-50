@@ -1,6 +1,7 @@
 from .diff_builder import build_diff_tree
 from .formatters.plain import format_plain
 from .formatters.stylish import format_stylish
+from .formatters.json import format_json
 from .parser import parse_file
 
 
@@ -27,5 +28,7 @@ def generate_diff_from_data(data1, data2, format_name='stylish'):
         return '{\n' + inner + '\n}'
     if format_name == 'plain':
         return format_plain(diff_tree)
+    if format_name == 'json':
+        return format_json(diff_tree)
     else:
         raise ValueError(f'Unsupported format: {format_name}')
