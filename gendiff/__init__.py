@@ -4,7 +4,6 @@ from .formatters.plain import format_plain
 from .formatters.stylish import format_stylish
 from .parser import parse_file
 
-
 FORMATTERS = {
     'stylish': lambda diff: format_stylish(diff, depth=1),
     'plain': format_plain,
