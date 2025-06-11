@@ -122,3 +122,130 @@ uv run gendiff tests/test_data/file1.json tests/test_data/file2.json -f plain
 Полная демострация в терминале:
 
 [![asciicast](https://asciinema.org/a/dxS2k6JHA94CkcY1tt7BVNEoP.svg)](https://asciinema.org/a/dxS2k6JHA94CkcY1tt7BVNEoP)
+
+##### Сравниваем два конфигурационных файла с выводом в JSON:
+
+```bash
+uv run gendiff tests/test_data/file1.json tests/test_data/file2.json -f json
+# Вывод:
+# [
+#   {
+#     "type": "nested",
+#     "key": "common",
+#     "children": [
+#       {
+#         "type": "added",
+#         "key": "follow",
+#         "value": false
+#       },
+#       {
+#         "type": "unchanged",
+#         "key": "setting1",
+#         "value": "Value 1"
+#       },
+#       {
+#         "type": "removed",
+#         "key": "setting2",
+#         "value": 200
+#       },
+#       {
+#         "type": "changed",
+#         "key": "setting3",
+#         "old_value": true,
+#         "new_value": null
+#       },
+#       {
+#         "type": "added",
+#         "key": "setting4",
+#         "value": "blah blah"
+#       },
+#       {
+#         "type": "added",
+#         "key": "setting5",
+#         "value": {
+#           "key5": "value5"
+#         }
+#       },
+#       {
+#         "type": "nested",
+#         "key": "setting6",
+#         "children": [
+#           {
+#             "type": "nested",
+#             "key": "doge",
+#             "children": [
+#               {
+#                 "type": "changed",
+#                 "key": "wow",
+#                 "old_value": "",
+#                 "new_value": "so much"
+#               }
+#             ]
+#           },
+#           {
+#             "type": "unchanged",
+#             "key": "key",
+#             "value": "value"
+#           },
+#           {
+#             "type": "added",
+#             "key": "ops",
+#             "value": "vops"
+#           }
+#         ]
+#       }
+#     ]
+#   },
+#   {
+#     "type": "nested",
+#     "key": "group1",
+#     "children": [
+#       {
+#         "type": "changed",
+#         "key": "baz",
+#         "old_value": "bas",
+#         "new_value": "bars"
+#       },
+#       {
+#         "type": "unchanged",
+#         "key": "foo",
+#         "value": "bar"
+#       },
+#       {
+#         "type": "changed",
+#         "key": "nest",
+#         "old_value": {
+#           "key": "value"
+#         },
+#         "new_value": "str"
+#       }
+#     ]
+#   },
+#   {
+#     "type": "removed",
+#     "key": "group2",
+#     "value": {
+#       "abc": 12345,
+#       "deep": {
+#         "id": 45
+#       }
+#     }
+#   },
+#   {
+#     "type": "added",
+#     "key": "group3",
+#     "value": {
+#       "deep": {
+#         "id": {
+#           "number": 45
+#         }
+#       },
+#       "fee": 100500
+#     }
+#   }
+# ]
+```
+
+Полная демострация в терминале:
+
+[![asciicast](https://asciinema.org/a/8LeJ5lrukxEMYOuzaajExa43Q.svg)](https://asciinema.org/a/8LeJ5lrukxEMYOuzaajExa43Q)
