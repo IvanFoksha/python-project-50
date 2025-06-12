@@ -29,8 +29,6 @@ jobs:
           make test-coverage
 
       - name: Initialize SonarCloud Scanner
-        uses: SonarSource/sonarcloud-github-action@master
+        uses: SonarSource/sonarqude-scan-action@v5.0.0
         with:
-          login: ${{ secrets.SONAR_TOKEN }}
-          organization: "ivanfoksha"
-          projectKey: "IvanFoksha_python-project-50"
+          token: ${{ secret.SONAR_TOKEN }}
