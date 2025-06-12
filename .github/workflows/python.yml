@@ -36,7 +36,7 @@ jobs:
           echo "sonar.testExecutionReportPaths=$PWD/coverage.xml" >> sonar-project.properties
           echo "sonar.python.version=3.12" >> sonar-project.properties
 
-      - name: Initialize SonarCloud Scanner
-        uses: SonarSource/sonarqude-scan-action@v5.0.0
-        with:
-          token: ${{ secret.SONAR_TOKEN }}
+      # - name: Initialize SonarCloud Scanner
+      #   uses: SonarSource/sonarqude-scan-action@v5.0.0
+      #   with:
+      #     token: ${{ secret.SONAR_TOKEN }}
