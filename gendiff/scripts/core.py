@@ -1,8 +1,8 @@
-from .diff_builder import build_diff_tree
-from .formatters.json import format_json
-from .formatters.plain import format_plain
-from .formatters.stylish import format_stylish
-from .parser import parse_file
+from ..scripts.diff_builder import build_diff_tree
+from ..formatters.json import format_json
+from ..formatters.plain import format_plain
+from ..formatters.stylish import format_stylish
+from ..scripts.parser import parse_file
 
 FORMATTERS = {
     'stylish': lambda diff: format_stylish(diff, depth=1),
