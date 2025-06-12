@@ -6,7 +6,7 @@
 
 [![Quality Gate](https://sonarcloud.io/api/project_badges/measure?project=IvanFoksha_python-project-50&metric=alert_status)](https://sonarcloud.io/dashboard?id=IvanFoksha_python-project-50)
 
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=IvanFoksha_python-project-50&metric=coverage)](https://sonarcloud.io/dashboard?id=IvanFoksha_python-project-50)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=IvanFoksha_python-project-50&metric=coverage)](https://sonarcloud.io/summary/new_code?id=IvanFoksha_python-project-50)
 
 ### Пример использования
 
