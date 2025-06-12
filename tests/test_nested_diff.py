@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from gendiff import generate_diff_from_data
-from gendiff.parser import parse_file
+from gendiff.scripts.parser import parse_file
 
 FIXTURES_PATH = Path(__file__).parent / 'test_data'
 
