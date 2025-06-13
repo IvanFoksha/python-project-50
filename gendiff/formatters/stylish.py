@@ -72,6 +72,6 @@ def format_value(value, depth=0):
     elif isinstance(value, bool):
         return 'true' if value else 'false'
     elif value is None:
-        return ''
+        return ' null'
     else:
         return str(value)
