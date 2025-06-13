@@ -15,7 +15,7 @@ def format_stylish(diff_tree, depth=0):
             lines.append(f"{indent}{key}: {{")
             if '\n' in children_lines:
                 indent_children = '\n'.join(
-                    f"{'    ' * depth}{line}"
+                    f"{'    ' * (depth + 1)}{line}"
                     for line in children_lines.split('\n')
                 )
                 lines.append(indent_children)

@@ -54,9 +54,12 @@ wheels = [
 ]
 
 [[package]]
-name = "gendiff"
+name = "hexlet-code"
 version = "0.1.0"
 source = { editable = "." }
+dependencies = [
+    { name = "pyyaml" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -67,6 +70,7 @@ dev = [
 ]
 
 [package.metadata]
+requires-dist = [{ name = "pyyaml" }]
 
 [package.metadata.requires-dev]
 dev = [
