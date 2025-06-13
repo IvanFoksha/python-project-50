@@ -2,7 +2,7 @@
 authors = [
     {name = "Ivan Foksha", email = "v.foksh6@gmail.com"}
 ]
-name = "gendiff"
+name = "hexlet-code"
 version = "0.1.0"
 description = "A tool to compute differences between files"
 readme = "README.md"
